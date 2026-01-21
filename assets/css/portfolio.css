@@ -1,0 +1,866 @@
+/**
+* Template Name: Green
+* Updated: Sep 18 2023 with Bootstrap v5.3.2
+* Template URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #444444;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #0ab7ec;
+  }
+  
+  a:hover {
+    color: #0ab7ec;
+    text-decoration: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  p {
+    font-size: 15px;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  /*--------------------------------------------------------------
+  # Back to top button
+  --------------------------------------------------------------*/
+  .back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #0ab7ec;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+  }
+  
+  .back-to-top i {
+    font-size: 24px;
+    color: #fff;
+    line-height: 0;
+  }
+  
+  .back-to-top:hover {
+    background: #7ad5f1;;
+    color: #fff;
+  }
+  
+  .back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /*--------------------------------------------------------------
+  # Top Bar
+  --------------------------------------------------------------*/
+  #topbar {
+    background: #0ab7ec;
+    font-size: 15px;
+    height: 40px;
+    padding: 0;
+  }
+  
+  #topbar .contact-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  #topbar .contact-info a {
+    line-height: 0;
+    color: #ffffff;
+    transition: 0.3s;
+  }
+  
+  #topbar .contact-info a:hover {
+    color: #444444;
+  }
+  
+  #topbar .contact-info i {
+    color: #ffffff;
+    line-height: 0;
+    margin-right: 5px;
+  }
+  
+  #topbar .contact-info .phone-icon {
+    margin-left: 15px;
+  }
+  
+  #topbar .contact-info span {
+    color: #ffffff; 
+  }
+  
+  #topbar .social-links a {
+    color: #ffffff;
+    padding: 4px 12px;
+    display: inline-block;
+    line-height: 1px;
+    transition: 0.3s;
+  }
+  
+  #topbar .social-links a:hover {
+    color: #0ab7ec;
+  }
+  
+  @media (max-width: 768px) {
+    #topbar {
+      height: auto;
+      padding: 10px 0;
+    }
+  
+    #topbar .contact-info {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    #topbar .contact-info > div {
+      flex-basis: 100%;  
+      text-align: center; 
+      margin-bottom: 10px;
+    }
+  }
+ 
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  transition: all 0.5s;
+  z-index: 997;
+  height: 90px;
+}
+
+#header.header-scrolled {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#header .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#header .logo a {
+  color: #0ab7ec;
+}
+
+#header .logo img {
+  max-height: 40px;
+}
+
+.scrolled-offset {
+  margin-top: 70px;
+}
+
+.logo a {
+  font-size: 20px; 
+  white-space: nowrap; 
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  color: #0ab7ec;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column; 
+}
+
+.mobile-nav-toggle {
+  color: #0ab7ec;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-size: 15px;
+  color: #222222;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: #0ab7ec;
+}
+
+.navbar .getstarted,
+.navbar .getstarted:focus {
+  color: #0ab7ec;
+  padding: 8px 25px;
+  margin-left: 30px;
+  border-radius: 4px;
+  border: 2px solid #0ab7ec;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.navbar .getstarted:hover,
+.navbar .getstarted:focus:hover {
+  background: #0ab7ec;
+  color: #fff;
+}
+
+/* 메뉴 항목 간 간격 늘리기 */
+.navbar a {
+  padding: 10px 0 10px 60px; /* 좌측 패딩을 증가시킵니다 */
+}
+
+.navbar .dropdown {
+  position: relative;
+}
+
+.navbar .dropdown ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transform: translateX(20px);
+  margin: 0;
+  padding: 5px 0; /* 제목들 사이의 간격 늘리기 */
+  width: 100vw; /* 화면의 전체 너비로 설정 */
+  background: none; /* 배경 제거 */
+  z-index: 99;
+  white-space: normal;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.navbar .dropdown ul li {
+  min-width: 250px; /* 하위 메뉴의 최소 너비를 증가 */
+  padding: 5px 20px; /* 하위 메뉴의 상하 간격을 좁히고 좌우 패딩을 넓힘 */
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  text-transform: none;
+  white-space: normal; /* 텍스트 줄바꿈 허용 */
+}
+
+.navbar .dropdown ul a i {
+  font-size: 14px;
+}
+
+.navbar .dropdown ul li a {
+  font-size: 14px;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover>a {
+  color: #0ab7ec;
+}
+
+.navbar .dropdown:hover>ul {
+  display: block;
+  height: auto;
+}
+
+#dropdown-background {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 98;
+  transition: height 0.3s ease;
+}
+
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #283d50;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  #dropdown-background {
+    display: none !important;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(23, 35, 46, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #004289;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover>a {
+  color: #64cbf8;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  width: 300px; 
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover>a {
+  color: #64cbf8;
+}
+
+.navbar-mobile .dropdown>.dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  padding: 200px 0 120px 0;
+  overflow: hidden; 
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: rgba(0, 0, 0, 0); */
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: 1;
+}
+  
+  @media (max-width: 991px) {
+    #hero {
+      padding: 140px 0 60px 0;
+    }
+  }
+  
+  @media (max-width: 574px) {
+    #hero {
+      padding: 100px 0 20px 0;
+    }
+  }
+  
+  #hero .hero-img {
+    width: 50%;
+    float: right;
+  }
+  
+  @media (max-width: 991px) {
+    #hero .hero-img {
+      width: 80%;
+      float: none;
+      margin: 0 auto 25px auto;
+    }
+  }
+  
+  #hero .hero-info {
+    width: 85%;
+    float: left;
+  }
+  
+  @media (max-width: 991px) {
+    #hero .hero-info {
+      width: 80%;
+      float: none;
+      margin: auto;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    #hero .hero-info {
+      width: 100%;
+    }
+  }
+  
+  #hero .hero-info {
+    position: relative;
+    z-index: 2; 
+  }
+  
+  #hero .hero-info h2 {
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 38px;
+    font-weight: 700;
+    text-align: right;
+  }
+  
+  #hero .hero-info h2 span {
+    color: #74b5fc;
+    text-decoration: underline;
+  }
+
+  p > span:first-of-type {
+    font-weight: bold;
+    color: #0ab7ec;
+}
+
+p > span:not(:first-of-type) {
+    font-weight: bold;
+    color: black;
+}
+  
+.half-size-image {
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
+  @media (max-width: 767px) {
+    #hero .hero-info h2 {
+      font-size: 21px;
+      margin-bottom: 30px;
+    }
+    .img-fluid {
+      margin-top: -10px;
+    }
+  }
+  
+  #hero .hero-info .btn-get-started,
+  #hero .hero-info .btn-services {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 0 20px 20px 0;
+    color: #fff;
+  }
+  
+  #hero .hero-info .btn-get-started {
+    background: #64cbf8;
+    border: 2px solid #64cbf8;
+    color: #fff;
+  }
+  
+  #hero .hero-info .btn-get-started:hover {
+    background: none;
+    border-color: #fff;
+    color: #fff;
+  }
+  
+  #hero .hero-info .btn-services {
+    border: 2px solid #fff;
+  }
+  
+  #hero .hero-info .btn-services:hover {
+    background: #64cbf8;
+    border-color: #64cbf8;
+    color: #fff;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+}
+
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background-color: #f1f4f1;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #0ab7ec;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.section-title p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #919191;
+}
+
+/* portfolio section 
+-----------------------------------*/
+.row.align-items-start {
+  margin-top: 20px;
+}
+
+.profile-section {
+  padding: 40px 0;
+}
+
+.name-title strong {
+  font-weight: bold; /* 김명숙을 굵은 글자로 */
+}
+
+.name-title {
+  font-weight: normal; /* 센터장은 보통 글자로 */
+}
+
+.col-md-4 {
+ padding-top: 5px;
+}
+
+.col-md-8 {
+  position: relative;
+  left: -50px; 
+}
+
+.title-line {
+  border: 0;
+  height: 1px;
+  background-color: rgb(113, 111, 111); 
+  width: 720px; 
+  margin-top: 5px; 
+  margin-bottom: 10px; 
+}
+
+p {
+  margin-bottom: 5px; 
+}
+
+ul.list-unstyled {
+  margin-top: 3px; 
+  font-size: 14px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.info-text {
+  color: #64cbf8; 
+}
+
+.img-fluid {
+  max-width: 100%; 
+  height: auto; 
+}
+
+.profile-line {
+  border: 0;
+  height: 3px;
+  background-color:  #64cbf8; 
+  width: 1050px; 
+  margin-top: 5px; 
+  margin-bottom: 5px; 
+}
+
+@media (max-width: 768px) {
+  .name-title {
+    font-size: 1.5rem; 
+  }
+
+  .col-md-8 {
+    margin-top: 30px;
+    position: relative;
+    left: 0px; 
+  }
+
+  .profile-line { 
+    width: 450px; 
+  }
+
+  .title-line {
+    width: 450px; 
+  }
+}
+
+/* seminar-list section */
+.seminar-list {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+.seminar-list ul {
+    list-style: none; 
+    padding: 0;
+}
+
+.seminar-list li {
+    background-color: #f8f8f8; /* 아이템 배경색 */
+    border: 1px solid #ddd; /* 테두리 */
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.list-box {
+  background-color: #f8f8f8; /* 회색 배경 */
+  border: 1px solid #ddd; /* 경계선 추가 */
+}
+
+.custom-list-style {
+  position: relative; /* 점을 추가하기 위한 포지셔닝 기준 */
+  padding-left: 20px; /* 점과 텍스트 사이 간격 조정 */
+  margin-bottom: 5px; /* 리스트 아이템 하단 여백 */
+}
+
+.custom-list-style::before {
+  content: ''; /* 가상 요소의 내용 */
+  position: absolute; /* 점을 정확한 위치에 배치 */
+  left: 0; /* 점의 위치를 조정 */
+  top: 50%; /* 상위 요소 기준으로 상단에서 50% 위치에 배치 */
+  transform: translateY(-50%); /* 점을 정확히 리스트 아이템의 중앙으로 이동 */
+  width: 2px; /* 점의 너비 */
+  height: 2px; /* 점의 높이 */
+  border-radius: 50%; /* 원형으로 만들기 */
+  background-color: black; /* 점의 색상 */
+}
+
+.list-unstyled {
+  margin-bottom: 40px;
+}
+
+.title-with-line h4 {
+  position: relative;
+  display: block; /* 선이 박스 전체 너비를 차지하도록 display 속성을 block으로 변경 */
+  padding-bottom: 10px; /* 선과 텍스트 사이의 간격 */
+  font-weight: bold;
+}
+
+.title-with-line h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0; /* 선이 왼쪽 끝에서 시작하도록 조정 */
+  width: calc(100% - 40px); /* 선의 길이를 박스 너비에서 양쪽 여백 20px씩을 제외한 만큼으로 설정 */
+  border-bottom: 2px solid #0ab7ec; /* 선의 스타일 */
+  margin-right: 20px; /* 오른쪽 여백을 20px로 설정 */
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+    background: #090909;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  #footer h3 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0 0 15px 0;
+  }
+  
+  #footer p {
+    font-size: 15;
+    font-style: italic;
+    padding: 0;
+    margin: 0 0 40px 0;
+  }
+  
+  #footer .social-links {
+    margin: 0 0 40px 0;
+  }
+  
+  #footer .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #0ab7ec;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+  }
+  
+  #footer .social-links a:hover {
+    background: #449d5b;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  #footer .copyright {
+    margin: 0 0 5px 0;
+  }
+  
+  #footer .credits {
+    font-size: 13px;
+  }
