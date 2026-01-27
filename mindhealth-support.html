@@ -488,21 +488,41 @@
             };
 
             try {
-                // Supabase Edge Function 호출
-                const response = await fetch('https://wrfofpzxxfmajireuieo.supabase.co/functions/v1/maumtown-contact', {
+                // SMS 발송 (Supabase Edge Function 호출)
+                const smsResponse = await fetch('https://wrfofpzxxfmajireuieo.supabase.co/functions/v1/maumtown-contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndyZm9mcHp4eGZtYWppcmV1aWVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE1Nzg2NjgsImV4cCI6MjA1NzE1NDY2OH0.CEuBnrJTmFzcYkScSykoSnFTj86bjGrfytUFpk8Lado',
-                        'x-api-key': 'maumtown-2024-secret-key' // API 키
+                        'x-api-key': 'maumtown-2024-secret-key'
                     },
                     body: JSON.stringify(formData)
                 });
 
-                const result = await response.json();
+                const smsResult = await smsResponse.json();
 
-                if (response.ok && result.success) {
-                    console.log('SUCCESS!', result);
+                // 이메일 발송 (Supabase Edge Function 호출)
+                const emailResponse = await fetch('https://wrfofpzxxfmajireuieo.supabase.co/functions/v1/maumtown-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndyZm9mcHp4eGZtYWppcmV1aWVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE1Nzg2NjgsImV4cCI6MjA1NzE1NDY2OH0.CEuBnrJTmFzcYkScSykoSnFTj86bjGrfytUFpk8Lado',
+                        'x-api-key': 'maumtown-2024-secret-key'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const emailResult = await emailResponse.json();
+
+                // SMS 또는 이메일 중 하나라도 성공하면 OK
+                const smsSuccess = smsResponse.ok && smsResult.success;
+                const emailSuccess = emailResponse.ok && emailResult.success;
+
+                if (smsSuccess || emailSuccess) {
+                    console.log('SUCCESS!', { sms: smsResult, email: emailResult });
+                    console.log('SMS 발송:', smsSuccess ? '성공' : '실패');
+                    console.log('이메일 발송:', emailSuccess ? '성공' : '실패');
+
                     loading.style.display = 'none';
                     sentMessage.style.display = 'block';
                     form.reset();
@@ -512,7 +532,7 @@
                         sentMessage.style.display = 'none';
                     }, 5000);
                 } else {
-                    throw new Error(result.error || '전송에 실패했습니다.');
+                    throw new Error('SMS 및 이메일 발송 모두 실패했습니다.');
                 }
             } catch (error) {
                 console.error('FAILED...', error);
