@@ -1,74 +1,13 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
-import {
-  getAuth,
-  signInAnonymously,
-} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDg7pRFz4g4Yznnf-cOrIAS-avflcybfdk",
-  authDomain: "ibpi-ec115.firebaseapp.com",
-  projectId: "ibpi-ec115",
-  storageBucket: "ibpi-ec115.appspot.com",
-  messagingSenderId: "174907185993",
-  appId: "1:174907185993:web:9aacd03b5d402d43801898",
-};
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
 
 (function () {
   "use strict";
 
   document.addEventListener("DOMContentLoaded", function () {
-    // 익명 인증
-    signInAnonymously(auth).catch((error) => {
-      console.error("Authentication error: ", error);
-    });
 
-    const contactForm = document.getElementById("contactForm");
 
-    if (contactForm) {
-      contactForm.addEventListener("submit", async function (event) {
-        event.preventDefault();
 
-        const name = document.getElementById("name").value;
-        const phone = document.getElementById("phone").value;
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("message").value;
-
-        document.querySelector(".loading").style.display = "block";
-        document.querySelector(".sent-message").style.display = "none";
-        document.querySelector(".error-message").style.display = "none";
-
-        try {
-          const docRef = await addDoc(collection(db, "maumtown"), {
-            name: name,
-            phone: phone,
-            subject: subject,
-            message: message,
-            timestamp: new Date(),
-          });
-
-          document.querySelector(".sent-message").style.display = "block";
-          contactForm.reset();
-
-          setTimeout(() => {
-            document.querySelector(".sent-message").style.display = "none";
-          }, 2000);
-        } catch (error) {
-          document.querySelector(".error-message").textContent = error.message;
-          document.querySelector(".error-message").style.display = "block";
-        } finally {
-          document.querySelector(".loading").style.display = "none";
-        }
-      });
-    }
 
     // Initialize the carousel and start auto-cycling
     var myCarousel = document.querySelector("#carouselExampleIndicators");
