@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
@@ -559,91 +559,6 @@
     <!-- Template Main JS File -->
     <script type="module" src="assets/js/main.js"></script>
 
-    <script>
-        // Form submission handler - SMS 발송
-        document.getElementById('mindHealthForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const form = this;
-            const loading = form.querySelector('.loading');
-            const errorMessage = form.querySelector('.error-message');
-            const sentMessage = form.querySelector('.sent-message');
-
-            // Show loading
-            loading.style.display = 'block';
-            errorMessage.style.display = 'none';
-            sentMessage.style.display = 'none';
-
-            // 폼 데이터 수집
-            const formData = {
-                name: form.name.value,
-                phone: form.phone.value,
-                email: form.email.value || '',
-                voucher_status: form.voucher.options[form.voucher.selectedIndex].text,
-                preferred_date: form.preferredDate.value || '',
-                message: form.message.value || ''
-            };
-
-            try {
-                // SMS 발송 (Supabase Edge Function 호출)
-                const smsResponse = await fetch('https://wrfofpzxxfmajireuieo.supabase.co/functions/v1/maumtown-contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndyZm9mcHp4eGZtYWppcmV1aWVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE1Nzg2NjgsImV4cCI6MjA1NzE1NDY2OH0.CEuBnrJTmFzcYkScSykoSnFTj86bjGrfytUFpk8Lado',
-                        'x-api-key': 'maumtown-2024-secret-key'
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                const smsResult = await smsResponse.json();
-
-                // 이메일 발송 (Supabase Edge Function 호출)
-                const emailResponse = await fetch('https://wrfofpzxxfmajireuieo.supabase.co/functions/v1/maumtown-email', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndyZm9mcHp4eGZtYWppcmV1aWVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE1Nzg2NjgsImV4cCI6MjA1NzE1NDY2OH0.CEuBnrJTmFzcYkScSykoSnFTj86bjGrfytUFpk8Lado',
-                        'x-api-key': 'maumtown-2024-secret-key'
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                const emailResult = await emailResponse.json();
-
-                // SMS 또는 이메일 중 하나라도 성공하면 OK
-                const smsSuccess = smsResponse.ok && smsResult.success;
-                const emailSuccess = emailResponse.ok && emailResult.success;
-
-                if (smsSuccess || emailSuccess) {
-                    console.log('SUCCESS!', { sms: smsResult, email: emailResult });
-                    console.log('SMS 발송:', smsSuccess ? '성공' : '실패');
-                    console.log('이메일 발송:', emailSuccess ? '성공' : '실패');
-
-                    loading.style.display = 'none';
-                    sentMessage.style.display = 'block';
-                    form.reset();
-
-                    // Hide success message after 5 seconds
-                    setTimeout(() => {
-                        sentMessage.style.display = 'none';
-                    }, 5000);
-                } else {
-                    throw new Error('SMS 및 이메일 발송 모두 실패했습니다.');
-                }
-            } catch (error) {
-                console.error('FAILED...', error);
-                loading.style.display = 'none';
-                errorMessage.textContent = '전송에 실패했습니다. 다시 시도해주시거나 전화(032-431-0088)로 문의해주세요.';
-                errorMessage.style.display = 'block';
-
-                // Hide error message after 10 seconds
-                setTimeout(() => {
-                    errorMessage.style.display = 'none';
-                }, 10000);
-            }
-        });
-    </script>
 </body>
 
 </html>
