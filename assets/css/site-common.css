@@ -199,3 +199,7 @@
   #topbar .contact-info-left, #topbar .contact-info-center { display: none !important; }
   .home-hero { padding-top: 32px; }
 }
+
+/* 서비스 페이지 제목 줄: 긴 제목이 모바일에서 넘치지 않게 */
+.d-flex > .text-start.ps-4 { min-width: 0; }
+.d-flex > .text-start.ps-4 h3 { overflow-wrap: anywhere; }
