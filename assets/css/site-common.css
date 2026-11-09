@@ -203,3 +203,9 @@
 /* 서비스 페이지 제목 줄: 긴 제목이 모바일에서 넘치지 않게 */
 .d-flex > .text-start.ps-4 { min-width: 0; }
 .d-flex > .text-start.ps-4 h3 { overflow-wrap: anywhere; }
+
+/* 심리치료 페이지 책 표지·후기 페이지 본문이 모바일에서 넘치지 않게 */
+.book-covers { flex-wrap: wrap; justify-content: center; gap: 8px; }
+.book-cover { max-width: calc(33% - 8px); height: auto; }
+@media (max-width: 767px) { .col-12.content[style*="margin-left"] { margin-left: 0 !important; } }
+@media (max-width: 767px) { #about .about-container .content { margin-left: 0; } }
