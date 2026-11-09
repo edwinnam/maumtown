@@ -1,0 +1,184 @@
+/* 마음동네 공통 스타일 — 모든 페이지에서 페이지별 CSS 다음에 불러온다.
+   메뉴·푸터·하단 예약 바는 partials/ 에서 tools/sync-layout.mjs 로 각 페이지에 넣는다. */
+:root {
+  --mt-ink: #24323d;
+  --mt-sub: #5b6b76;
+  --mt-primary: #1f6f9f;        /* 기존 하늘색(#64cbf8)보다 진하게 — 흰 글씨 대비 확보 */
+  --mt-primary-dark: #17577d;
+  --mt-sky: #64cbf8;
+  --mt-warm: #f7f3ec;            /* 따뜻한 미색 배경 */
+  --mt-warm-2: #efe7da;
+  --mt-green: #4f7d5c;
+  --mt-line: #e3ddd2;
+  --mt-radius: 14px;
+}
+
+/* ---------- 메뉴: 상담 예약 버튼 ---------- */
+.navbar .nav-cta,
+.navbar .nav-cta:focus {
+  background: var(--mt-primary);
+  color: #fff !important;
+  border-radius: 999px;
+  padding: 8px 18px;
+  margin-left: 12px;
+  font-weight: 700;
+}
+.navbar .nav-cta:hover { background: var(--mt-primary-dark); color: #fff !important; }
+.navbar-mobile .nav-cta { margin: 12px 20px; display: inline-block; text-align: center; }
+.mobile-nav-toggle { font-size: 32px !important; }
+
+/* ---------- 푸터 ---------- */
+#footer.site-footer {
+  background: #26343e;
+  color: #d9e1e6;
+  padding: 48px 0 96px;
+  text-align: left;
+  font-size: 15px;
+}
+#footer.site-footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+#footer.site-footer a:hover { color: var(--mt-sky); }
+.site-footer-title { color: #fff; font-size: 22px; font-weight: 700; margin-bottom: 14px; }
+.site-footer-title small { font-size: 14px; font-weight: 400; color: #b9c6ce; margin-left: 6px; }
+.site-footer-line { margin-bottom: 6px; }
+.site-footer-note { margin-top: 14px; font-size: 13px; color: #aebbc4; line-height: 1.6; }
+.site-footer-head { color: #fff; font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+.site-footer-links { list-style: none; padding: 0; margin: 0; }
+.site-footer-links li { margin-bottom: 8px; }
+.site-footer-links a { text-decoration: none !important; }
+.site-footer-crisis { background: rgba(255,255,255,.06); border-radius: var(--mt-radius); padding: 16px 18px; }
+.site-footer-crisis p { margin-bottom: 8px; line-height: 1.7; }
+.site-footer-crisis a { font-weight: 700; }
+.site-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.12);
+  margin-top: 32px; padding-top: 18px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px;
+  font-size: 13px; color: #9fb0ba;
+}
+#footer.site-footer .site-footer-bottom a { color: #9fb0ba; }
+
+/* ---------- 예약 바: 모바일 하단 고정 / 데스크톱 우하단 ---------- */
+.back-to-top { display: none !important; }
+.site-cta {
+  position: fixed; z-index: 996;
+  right: 20px; bottom: 20px;
+  display: flex; gap: 8px;
+}
+.site-cta-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 12px 18px; border-radius: 999px;
+  font-weight: 700; font-size: 15px; text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+}
+.site-cta-call { background: #fff; color: var(--mt-primary); border: 1px solid var(--mt-primary); }
+.site-cta-book { background: #03c75a; color: #fff; }
+.site-cta-btn:hover { filter: brightness(.95); color: inherit; }
+.site-cta-book:hover { color: #fff; }
+@media (max-width: 767px) {
+  .site-cta {
+    left: 0; right: 0; bottom: 0; gap: 0;
+    background: #fff; border-top: 1px solid var(--mt-line);
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+  }
+  .site-cta-btn { flex: 1; box-shadow: none; margin: 0 4px; padding: 12px 6px; }
+  body { padding-bottom: 72px; }
+}
+
+/* ---------- 새 페이지 공통 컴포넌트 (individual, promise 등) ---------- */
+.mt-page { color: var(--mt-ink); font-family: 'Noto Sans KR', sans-serif; word-break: keep-all; }
+.mt-page p, .mt-page li { font-size: 16.5px; line-height: 1.85; }
+.mt-hero {
+  position: relative; background: var(--mt-warm);
+  padding: 140px 0 64px;
+}
+.mt-hero .mt-eyebrow { color: var(--mt-green); font-weight: 700; letter-spacing: .04em; margin-bottom: 10px; }
+.mt-hero h1 { font-size: clamp(28px, 4.2vw, 44px); font-weight: 700; line-height: 1.35; color: var(--mt-ink); margin-bottom: 18px; }
+.mt-hero .mt-lead { font-size: 18px; color: var(--mt-sub); max-width: 640px; }
+.mt-hero-photo { border-radius: 24px; overflow: hidden; box-shadow: 0 18px 40px rgba(36,50,61,.15); }
+.mt-hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4 / 5; }
+.mt-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.mt-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 13px 24px; border-radius: 999px; font-weight: 700; text-decoration: none;
+}
+.mt-btn-primary { background: var(--mt-primary); color: #fff; }
+.mt-btn-primary:hover { background: var(--mt-primary-dark); color: #fff; }
+.mt-btn-ghost { border: 1.5px solid var(--mt-primary); color: var(--mt-primary); background: #fff; }
+.mt-btn-ghost:hover { background: #eef6fb; color: var(--mt-primary-dark); }
+.mt-btn-naver { background: #03c75a; color: #fff; }
+.mt-btn-naver:hover { color: #fff; filter: brightness(.95); }
+
+.mt-section { padding: 72px 0; }
+.mt-section.alt { background: var(--mt-warm); }
+.mt-section-title { text-align: center; margin-bottom: 40px; }
+.mt-section-title .mt-eyebrow { color: var(--mt-green); font-weight: 700; margin-bottom: 8px; }
+.mt-section-title h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 700; color: var(--mt-ink); }
+.mt-section-title p { color: var(--mt-sub); max-width: 680px; margin: 10px auto 0; }
+
+.mt-card {
+  background: #fff; border: 1px solid var(--mt-line); border-radius: var(--mt-radius);
+  padding: 24px; height: 100%;
+}
+.mt-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--mt-ink); }
+.mt-card p { color: var(--mt-sub); margin-bottom: 0; font-size: 15.5px; }
+.mt-card .mt-icon {
+  width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center;
+  background: #e8f2f8; color: var(--mt-primary); font-size: 22px; margin-bottom: 14px;
+}
+.mt-tag {
+  display: inline-block; font-size: 13px; padding: 3px 10px; border-radius: 999px;
+  background: #eef3ee; color: var(--mt-green); margin: 0 4px 6px 0; font-weight: 600;
+}
+
+.mt-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 13.5px; font-weight: 700; padding: 5px 11px; border-radius: 8px;
+  background: #e8f2f8; color: var(--mt-primary-dark); margin: 0 6px 6px 0;
+}
+.mt-badge.national { background: #fbf0dc; color: #8a5a12; }
+
+.mt-steps { counter-reset: step; list-style: none; padding: 0; margin: 0; }
+.mt-steps li {
+  position: relative; padding: 0 0 26px 58px;
+}
+.mt-steps li::before {
+  counter-increment: step; content: counter(step);
+  position: absolute; left: 0; top: 0;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--mt-primary); color: #fff; font-weight: 700;
+  display: grid; place-items: center;
+}
+.mt-steps li strong { display: block; font-size: 17.5px; margin-bottom: 2px; }
+
+.mt-faq details {
+  background: #fff; border: 1px solid var(--mt-line); border-radius: 12px;
+  padding: 16px 20px; margin-bottom: 10px;
+}
+.mt-faq summary { font-weight: 700; cursor: pointer; font-size: 16.5px; }
+.mt-faq details p { margin: 12px 0 0; color: var(--mt-sub); }
+
+.mt-crisis {
+  border-left: 5px solid #c0563f; background: #fdf3f0; border-radius: 10px;
+  padding: 18px 22px;
+}
+.mt-crisis strong { color: #9b3b27; }
+
+.mt-photo { border-radius: var(--mt-radius); overflow: hidden; }
+.mt-photo img { width: 100%; display: block; object-fit: cover; }
+.mt-photo figcaption { font-size: 13.5px; color: var(--mt-sub); padding: 8px 2px 0; }
+
+.mt-stat { text-align: center; padding: 18px 10px; }
+.mt-stat b { display: block; font-size: 28px; color: var(--mt-primary); line-height: 1.2; }
+.mt-stat span { font-size: 14.5px; color: var(--mt-sub); }
+
+.mt-person { display: flex; gap: 16px; align-items: flex-start; }
+.mt-person img { width: 92px; height: 116px; object-fit: cover; border-radius: 12px; flex: none; background: var(--mt-warm-2); }
+.mt-person h3 { margin-bottom: 6px; }
+.mt-person h3 small { font-size: 14px; color: var(--mt-sub); font-weight: 400; margin-left: 4px; }
+
+@media (max-width: 767px) {
+  .mt-hero { padding: 110px 0 44px; }
+  .mt-section { padding: 52px 0; }
+  .mt-hero-photo img { aspect-ratio: 4 / 3; }
+}
+
+.navbar a[aria-current="page"] { color: var(--mt-primary) !important; font-weight: 700; }
