@@ -88,7 +88,7 @@
 .mt-page p, .mt-page li { font-size: 16.5px; line-height: 1.85; }
 .mt-hero {
   position: relative; background: var(--mt-warm);
-  padding: 140px 0 64px;
+  padding: 64px 0 64px;
 }
 .mt-hero .mt-eyebrow { color: var(--mt-green); font-weight: 700; letter-spacing: .04em; margin-bottom: 10px; }
 .mt-hero h1 { font-size: clamp(28px, 4.2vw, 44px); font-weight: 700; line-height: 1.35; color: var(--mt-ink); margin-bottom: 18px; }
@@ -176,9 +176,26 @@
 .mt-person h3 small { font-size: 14px; color: var(--mt-sub); font-weight: 400; margin-left: 4px; }
 
 @media (max-width: 767px) {
-  .mt-hero { padding: 110px 0 44px; }
+  .mt-hero { padding: 36px 0 44px; }
   .mt-section { padding: 52px 0; }
   .mt-hero-photo img { aspect-ratio: 4 / 3; }
 }
 
 .navbar a[aria-current="page"] { color: var(--mt-primary) !important; font-weight: 700; }
+#footer.site-footer p { font-style: normal; font-size: 15px; padding: 0; margin: 0 0 8px; }
+#footer.site-footer h3.site-footer-title { font-size: 22px; font-family: inherit; margin: 0 0 14px; padding: 0; }
+
+/* ---------- 홈 ---------- */
+.home-hero { padding-top: 56px; }
+.home-hero-links { margin-top: 18px; font-size: 15px; color: var(--mt-sub); }
+.home-hero-links a { color: var(--mt-primary); font-weight: 600; }
+.home-trust { padding-top: 40px; }
+.home-stats .mt-stat { background: #fff; border: 1px solid var(--mt-line); border-radius: var(--mt-radius); height: 100%; }
+.home-stats .mt-stat b { font-size: 20px; }
+.home-person img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; border-radius: 10px; margin-bottom: 14px; background: var(--mt-warm-2); }
+.home-person h3 small { font-size: 14px; color: var(--mt-sub); font-weight: 400; margin-left: 4px; }
+.home-person:hover { border-color: var(--mt-primary); }
+@media (max-width: 767px) {
+  #topbar .contact-info-left, #topbar .contact-info-center { display: none !important; }
+  .home-hero { padding-top: 32px; }
+}
