@@ -6,7 +6,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const part = (n) => readFileSync(join(root, 'partials', n), 'utf8').trim();
+const part = (n) => readFileSync(join(root, 'partials', n), 'utf8').replace(/\r\n/g, '\n').trim();
 const nav = part('nav.html');
 const footer = part('footer.html');
 const cta = part('cta.html');
@@ -20,9 +20,11 @@ let drift = 0;
 for (const page of pages) {
   const path = join(root, page);
   const before = readFileSync(path, 'utf8');
-  let html = before;
+  // 줄끝은 파일 원래 방식(CRLF/LF)을 유지한다 — autocrlf 워크트리에서 줄끝만 바뀌는 것을 막는다
+  const eol = before.includes('\r\n') ? '\r\n' : '\n';
+  let html = before.replace(/\r\n/g, '\n');
 
-  // 현재 페이지 링크에 active 표시 (Home 은 index 에서만)
+  // 현재 페이지 링크에 aria-current 표시
   const pageNav = nav.replace(
     new RegExp(`href="${page.replace(/[.&]/g, (c) => '\\' + c)}"`),
     (m) => m + ' aria-current="page"'
@@ -40,6 +42,7 @@ for (const page of pages) {
     html = html.replace(/(\s*)<\/body>/, `\n    ${block}\n$1</body>`);
   }
 
+  if (eol !== '\n') html = html.replace(/\n/g, eol);
   if (html !== before) {
     drift++;
     if (check) console.log(`어긋남: ${page}`);
