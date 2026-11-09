@@ -864,3 +864,64 @@ ul.list-unstyled {
   #footer .credits {
     font-size: 13px;
   }
+/* ---------- 상담진 소개 개편 (portfolio2) ---------- */
+.mt-hero.counselors-hero { padding: 56px 0 40px; }
+.counselors-hero .counselors-hero-photo img { aspect-ratio: 4 / 3; }
+.counselors-summary {
+  margin-top: 36px; background: #fff; border: 1px solid var(--mt-line);
+  border-radius: var(--mt-radius); padding: 20px 20px 8px;
+}
+.counselors-summary-title { font-weight: 700; font-size: 17px; margin-bottom: 8px; }
+.counselors-summary-title span { font-weight: 400; color: var(--mt-sub); margin-left: 6px; font-size: 15px; }
+.counselors-summary ul {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px;
+}
+.counselors-summary .mt-stat { padding: 10px 4px; }
+.counselors-summary .mt-stat span { display: block; font-size: 13.5px; line-height: 1.45; }
+
+.counselors-list { padding-top: 48px; }
+.counselors-order {
+  background: var(--mt-warm); border-radius: var(--mt-radius);
+  padding: 14px 18px; margin-bottom: 8px; color: var(--mt-ink);
+}
+.counselors-group {
+  font-size: clamp(22px, 2.6vw, 28px); font-weight: 700; color: var(--mt-ink);
+  margin: 44px 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--mt-line);
+}
+.counselor.mt-card {
+  display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 28px;
+  height: auto; margin-bottom: 20px;
+}
+.counselor-photo img {
+  width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center top;
+  border-radius: 12px; background: var(--mt-warm-2); display: block;
+}
+.counselor-body h3 { font-size: 22px; margin-bottom: 12px; }
+.counselor-body h3 small { font-size: 15px; font-weight: 400; color: var(--mt-sub); margin-left: 4px; }
+.counselor-badges { margin-bottom: 8px; }
+.counselor-body .counselor-degree,
+.counselor-body .counselor-line { color: var(--mt-ink); font-size: 15.5px; line-height: 1.7; margin-bottom: 8px; }
+.counselor-body .counselor-degree b,
+.counselor-body .counselor-line b { color: var(--mt-green); margin-right: 6px; }
+.counselor-tags { margin-bottom: 6px; }
+.counselor-more { margin-top: 10px; border-top: 1px dashed var(--mt-line); padding-top: 10px; }
+.counselor-more summary { cursor: pointer; font-weight: 700; color: var(--mt-primary); font-size: 15.5px; }
+.counselor-more h4 { font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--mt-ink); }
+.counselor-more ul { padding-left: 18px; margin: 0; }
+.mt-page .counselor-more li { font-size: 14.5px; line-height: 1.7; color: var(--mt-sub); }
+
+.counselors-footer { margin-top: 40px; text-align: center; }
+.mt-page .counselors-verify { font-size: 15px; color: var(--mt-sub); }
+.counselors-verify a { color: var(--mt-primary); text-decoration: underline; text-underline-offset: 3px; }
+.counselors-footer .mt-actions { justify-content: center; }
+
+@media (max-width: 991px) {
+  .counselors-summary ul { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 575px) {
+  .mt-hero.counselors-hero { padding: 36px 0 28px; }
+  .counselors-summary ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .counselor.mt-card { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+  .counselor-photo { max-width: 200px; }
+}
