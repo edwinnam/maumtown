@@ -124,6 +124,8 @@
     links.forEach(function (link) {
       link.addEventListener("click", function (e) {
         e.stopPropagation(); // 이벤트 전파 중지
+        // 하위 메뉴를 여는 상위 항목은 메뉴를 닫지 않는다 (닫으면 모바일에서 하위 메뉴가 안 열린다)
+        if (this.parentElement.classList.contains("dropdown")) return;
         if (navbar.classList.contains("navbar-mobile")) {
           navbar.classList.remove("navbar-mobile");
           mobileNavToggle.classList.toggle("bi-list");
@@ -246,11 +248,14 @@
     var mainMenuItems = document.querySelectorAll(".navbar > ul > li");
     mainMenuItems.forEach(function (item) {
       item.addEventListener("mouseenter", function () {
+        // 모바일 메뉴에서는 탭이 mouseenter 로도 들어와 하위 메뉴를 전부 펼쳤다가 접어 버린다 — 데스크톱 전용
+        if (navbar.classList.contains("navbar-mobile")) return;
         showDropdowns();
         clearTimeout(hideTimeout);
       });
 
       item.addEventListener("mouseleave", function (event) {
+        if (navbar.classList.contains("navbar-mobile")) return;
         hideTimeout = setTimeout(function () {
           if (
             !item.contains(event.relatedTarget) &&
@@ -301,36 +306,7 @@
     });
   }
 
-  /**
-   * Mobile nav toggle
-   */
-  document
-    .querySelector(".mobile-nav-toggle")
-    .addEventListener("click", function (e) {
-      e.stopPropagation();
-      document.getElementById("navbar").classList.toggle("navbar-mobile");
-      this.classList.toggle("bi-list");
-      this.classList.toggle("bi-x");
-    });
-
-  /**
-   * Mobile nav dropdowns activate
-   */
-  document
-    .querySelectorAll(".navbar .dropdown > a")
-    .forEach(function (dropdownLink) {
-      dropdownLink.addEventListener("click", function (e) {
-        if (
-          document.getElementById("navbar").classList.contains("navbar-mobile")
-        ) {
-          e.preventDefault();
-          e.stopPropagation();
-          this.nextElementSibling.classList.toggle("dropdown-active");
-          $(this).next("ul").slideToggle();
-          $(this).parent().siblings().find("ul").slideUp();
-        }
-      });
-    });
+  // 모바일 메뉴 토글·하위 메뉴는 DOMContentLoaded 안의 한 곳에서만 처리한다(중복 등록 시 서로 상쇄됨)
 
   /**
    * Scroll with offset on links with a class name .scrollto
@@ -502,32 +478,6 @@
     },
   });
 
-  $(document).ready(function () {
-    // 모바일 네비게이션 토글
-    $(".mobile-nav-toggle").on("click", function () {
-      $(".navbar").toggleClass("navbar-mobile");
-      $(this).toggleClass("bi-list bi-x");
-    });
-
-    // 드롭다운 메뉴 토글
-    $(".navbar .dropdown > a").on("click", function (e) {
-      if ($(".navbar").hasClass("navbar-mobile")) {
-        e.preventDefault();
-        e.stopPropagation(); // 이벤트 전파 중지
-        $(this).next("ul").slideToggle();
-        $(this).parent().siblings().find("ul").slideUp();
-      }
-    });
-
-    // 하위 메뉴 클릭 시 상위 메뉴 닫기
-    $(".navbar .dropdown ul li a").on("click", function () {
-      if ($(".navbar").hasClass("navbar-mobile")) {
-        $(".navbar").removeClass("navbar-mobile");
-        $(".mobile-nav-toggle").toggleClass("bi-list bi-x");
-        $(".navbar .dropdown ul").slideUp();
-      }
-    });
-  });
 
   // // JavaScript 코드 삽입
   // document.addEventListener("DOMContentLoaded", function () {

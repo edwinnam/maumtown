@@ -1,107 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://www.maumtown.kr/</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/introduction</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/portfolio2</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/reference</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/direction</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/witness</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/child&amp;adolescent</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/adult&amp;family</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/therapy</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/neurofeedback</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/longdistance</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/bookingprocess</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/comprehensive</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/psychologicaltesting</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/mitai</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/balancepsychology</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/ibpi</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/bsecard</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.maumtown.kr/aromaecard</loc>
-  <lastmod>2024-07-23T22:19:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.maumtown.kr/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/individual.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/promise.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/portfolio2.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/adult&amp;family.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/child&amp;adolescent.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/therapy.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/neurofeedback.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/longdistance.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/mindhealth-support.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/comprehensive.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/psychologicaltesting.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/mitai.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/ibpi.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/introduction.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/balancepsychology.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/bsecard.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/aromaecard.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/reference.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/witness.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/direction.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.maumtown.kr/bookingprocess.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.80</priority>
+  </url>
 </urlset>
