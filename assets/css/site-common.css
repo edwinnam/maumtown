@@ -209,3 +209,6 @@
 .book-cover { max-width: calc(33% - 8px); height: auto; }
 @media (max-width: 767px) { .col-12.content[style*="margin-left"] { margin-left: 0 !important; } }
 @media (max-width: 767px) { #about .about-container .content { margin-left: 0; } }
+
+.mt-edu { font-size: 14.5px !important; color: var(--mt-sub); margin: 4px 0 2px; line-height: 1.6 !important; }
+.mt-edu i { color: var(--mt-primary); }
